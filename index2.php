@@ -48,15 +48,15 @@
 
             <tr>
                 <td><h3>Name:</h3></td>
-                <td> <input type="text" name="name"></td>
+                <td><input type="text" name="name"></td>
             </tr>
             <tr>
                 <td><h3>Age:</h3></td>
-                <td> <input type="number" name="age"></td>
+                <td><input type="number" name="age"></td>
             </tr>
             <tr>
                 <td><h3>Phone:</h3></td>
-                <td> <input type="number" name="phone"></td>
+                <td><input type="number" name="phone"></td>
             </tr>
             <tr>
                 <td></td>
@@ -91,14 +91,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($json->saveFiletoJson()) { ?>
                 <span style="color: red"><h2 align="center">Nhập thông tin thành công</h2></span>
 
-            <?php } else { ?>
             <?php }
         } else { ?>
-            <span style="color: red"><h2 align="center">Không được để trống</h2></span>
+            <span style="color: red"><h2 align="center">Kiểm tra lại tuổi hoặc số điện thoại của bạn </h2></span>
             <?php
         }
     } else { ?>
-        <span style="color: red"><h2 align="center">Thất bại</h2></span><?php
+        <span style="color: red"><h2 align="center">Không được để trống</h2></span><?php
     }
 }
 

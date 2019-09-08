@@ -12,7 +12,8 @@ $json = new Json("data.json");
         margin: auto;
         background: bisque;
     }
-    input{
+
+    input {
         border: 3px solid royalblue;
         border-radius: 20px;
         font-size: 16px;
@@ -41,7 +42,9 @@ $json = new Json("data.json");
             <td><?php echo $key + 1; ?></td>
             <td><?php echo $value["name"] ?></td>
             <td><?php echo $value["age"] ?></td>
-            <td><?php echo $value["phone"] ?><a href="test.php"><input type="submit" name="xoa" value="Xoa"></a></td>
+            <td><?php echo $value["phone"] ?>
+                <form method="post"><input type="submit" name="xoa" value="Xóa"></form>
+            </td>
         </tr>
         <?php
 
@@ -49,12 +52,11 @@ $json = new Json("data.json");
 
     foreach ($array as $key => $value) {
         var_dump($key);
-
-
+        if (isset($_POST["xoa"])) {
             $json->remoteCustomer($key);
-            }
-
-        $json->saveFileToJson();
+        }
+    }
+    $json->saveFileToJson();
 
     ?>
 
@@ -63,3 +65,4 @@ $json = new Json("data.json");
 <br>
 <a style="border-radius: 20px; padding: 12px 28px; background: blue;font-size: 18px" href="index2.php">Back</a>
 <a style="border-radius: 20px; padding: 12px 28px; background: blue;font-size: 18px" href="index.php">Menu</a>
+<h3>Lưu ý : VUI LÒNG CLICK ĐÚP 2 LẦN ĐỂ XÓA!!</h3>
