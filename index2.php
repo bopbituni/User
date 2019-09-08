@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<a href="test.php"><input type="submit" id="submit" value="ShowInfo"></a>
+<a href="index3.php"><input type="submit" id="submit" value="ShowInfo"></a>
 
 
 <a style="border-radius: 20px; padding: 12px 28px; background: blue;font-size: 18px" href="index.php">Menu</a>
