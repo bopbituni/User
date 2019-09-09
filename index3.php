@@ -13,11 +13,11 @@ $json = new Json("data.json");
         background: bisque;
     }
 
-    input {
+    #a {
         border: 3px solid royalblue;
         border-radius: 20px;
         font-size: 16px;
-        padding: 12px 16px;
+        padding: 8px 8px;
         background: red;
     }
 
@@ -43,7 +43,8 @@ $json = new Json("data.json");
             <td><?php echo $value["name"] ?></td>
             <td><?php echo $value["age"] ?></td>
             <td><?php echo $value["phone"] ?>
-                <form method="post"><input type="submit" name="xoa" value="Xóa"></form>
+                <a id="a" href="index3.php?action=delete&id=<?php echo $key ?>">Xoa</a>
+<!--                <form method="post"><input type="submit" name="xoa" value="Xóa"></form>-->
             </td>
         </tr>
         <?php
@@ -52,9 +53,11 @@ $json = new Json("data.json");
 
     foreach ($array as $key => $value) {
         var_dump($key);
-        if (isset($_POST["xoa"])) {
-            $json->remoteCustomer($key);
-        }
+            $id = $_GET["id"];
+
+                $json->remoteCustomer($id);
+
+
     }
     $json->saveFileToJson();
 

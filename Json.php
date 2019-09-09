@@ -33,8 +33,9 @@ class Json
         array_push($this->arrayData, $customer);
     }
 
-    public function remoteCustomer ($file) {
-        array_splice($this->arrayData, $file, 1);
+    public function remoteCustomer ($id) {
+//        array_splice($this->arrayData, $id, 1);
+        unset($this->arrayData[$id]);
         return $this->arrayData;
     }
 
